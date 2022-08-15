@@ -1,15 +1,15 @@
 {
-    "name": "KukiChatBot",
-    "description": "Hello, I am KUKI An Intelligent ChatBot. If You Are Feeling Lonely, You can Always Come to me and Chat With Me!",
-    "logo": "https://telegra.ph/file/a54ed27b0dc3fc3e439fd.jpg",
-    "repository": "https://github.com/MoeZilla/kukichatbot",
+    "name": "ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ",
+    "description": "ʜᴇʟʟᴏ, ɪ ᴀᴍ ʜᴀɴᴀ ᴀɴ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴛ ᴄʜᴀᴛʙᴏᴛ. ɪғ ʏᴏᴜʙᴀʀᴇ ғᴇᴇʟɪɴɢ ʟᴏɴᴇʟʏ, ʏᴏᴜ ᴄᴀɴ ᴀʟᴡᴀʏs ᴄᴏᴍᴇ ᴛᴏ ᴍᴇ ᴀɴᴅ ᴄʜᴀᴛ ᴡɪᴛʜ ᴍᴇ!",
+    "logo": "https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg",
+    "repository": "https://github.com/Sumit9969/HanaChatRobot",
     "env": {
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
         },
-        "KUKI_API": {
-            "description": "join @metavoidsupport",
+        "HANA_API": {
+            "description": "",
             "required": true
         },
         "ERROR_LOG": {
