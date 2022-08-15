@@ -176,7 +176,7 @@ async def start(client, message):
     busername = self.username
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
-                  [InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
+                  [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
                   ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
         await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
