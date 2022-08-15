@@ -9,7 +9,7 @@ import re
 API_ID = os.environ.get("API_ID", None) 
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
-KUKI_API = os.environ.get("KUKI_API", None) 
+KUKI_API = os.environ.get("HANA_API", None) 
 ERROR_LOG = os.environ.get("ERROR_LOG", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
 
@@ -49,9 +49,9 @@ async def addchat(_, message):
     is_hana = hana.find_one({"chat_id": message.chat.id})
     if not is_hana:
         hana.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"✅ | Successfully\nKuki Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
+        await message.reply_text(f"✅ | sᴜᴄᴄᴇssғᴜʟʟʏ\nʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴏɴ ᴏғ ᴛʜɪs ɢʀᴏᴜᴘ ɪs sᴇᴛ ᴛᴏ @{message.chat.username}\n ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n ᴛᴇᴄʜ ǫᴜᴀʀᴅ")
     else:
-        await message.reply_text(f"Already Setup Kuki Chatbot of this Group Is @{message.chat.username}")
+        await message.reply_text(f"» ᴀʟʀᴇᴀᴅʏ sᴇᴛᴜᴘ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇ ᴏғ ᴛʜɪs ɢʀᴏᴜᴘ ɪs @{message.chat.username}")
 
 
 @bot.on_message(
@@ -72,10 +72,10 @@ async def rmchat(_, message):
             )
     is_hana = hana.find_one({"chat_id": message.chat.id})
     if not is_hana:
-        await message.reply_text("Already Kuki ChatBot Disable")
+        await message.reply_text("» ᴀʟʀᴇᴀᴅʏ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ")
     else:
         hana.delete_one({"chat_id": message.chat.id})
-        await message.reply_text("✅ | Kuki Chatbot is disable!")
+        await message.reply_text("✅ | ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪs ᴅɪsᴀʙʟᴇ")
 
 
 
@@ -108,7 +108,7 @@ async def hanaai(client: Client, message: Message):
            else:
                msg = message.text
            try: 
-               x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+               x = requests.get(f"https://kukiapi.xyz/api/apikey={HANA_API}/message={msg}").json()
                x = x['reply']
                await asyncio.sleep(1)
            except Exception as e:
@@ -135,7 +135,7 @@ async def hanaai(client: Client, message: Message):
     else:
         msg = message.text
     try:
-        x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+        x = requests.get(f"https://kukiapi.xyz/api/apikey={HANA_API}/message={msg}").json()
         x = x['reply']
         await asyncio.sleep(1)
     except Exception as e:
@@ -156,7 +156,7 @@ async def hanaai(client: Client, message: Message):
     else:
         msg = message.text.replace(message.text.split(" ")[0], "")
     try:
-        x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+        x = requests.get(f"https://kukiapi.xyz/api/apikey={HANA_API}/message={msg}").json()
         x = x['reply']
         await asyncio.sleep(1)
     except Exception as e:
@@ -175,19 +175,29 @@ async def start(client, message):
     self = await bot.get_me()
     busername = self.username
     if message.chat.type != "private":
-        buttons = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Click here",
-                url=f"t.me/kukichatbot?start")]])
-        await message.reply("Contact me in PM",
+        buttons =  [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
+                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
+                   ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
+        await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
                             reply_markup=buttons)
         
     else:
-        buttons = [[InlineKeyboardButton("Support", url="https://t.me/metavoidsupport"),
-                    InlineKeyboardButton("Channel", url="https://t.me/metavoid"),
-                    InlineKeyboardButton("Repo", url="https://github.com/metavoidteam/kukichatbot")
-                    ]]
-        Photo = "https://telegra.ph/file/b04509cc8486f23690bba.jpg"
-        await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n Powered By @MetaVoid", reply_markup=InlineKeyboardMarkup(buttons))
+        buttons = [[
+            InlineKeyboardButton("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url=f"https://t.me/HanaChatRobot?startgroup=true")
+        ],
+        
+        [
+            InlineKeyboardButton("👥 ᴏғғɪᴄɪᴀʟ ɢʀᴏᴜᴘ", url="https://t.me/TechQuardSupport"),
+            InlineKeyboardButton("📣 ᴏғғɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟ", url="https://t.me/TechQuard")
+        ],
+        [
+            InlineKeyboardButton("💠 ʏᴏᴜᴛᴜʙᴇ 💠", url="https://youtube.com/channel/UCtI7hbY-BD7wvuIzoSU0cEw")
+        ]]
+        Photo = "https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg"
+        await message.reply_photo(Photo, caption=f"*ʜᴇʟʟᴏ  [{message.from_user.first_name}](tg://user?id={message.from_user.id})*
+*ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀʀᴛɪғɪᴄᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ᴄʜᴀᴛ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ᴛᴀʟᴋ ᴀʙᴏᴜᴛ ᴀɴʏ ᴛᴏᴘɪᴄ ɪɴ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➛ ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ᴄᴍᴅs. ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
@@ -197,13 +207,14 @@ async def help(client, message):
     busername = self.username
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Click here",
-                url=f"t.me/kukichatbot?start=help_")]])
-        await message.reply("Contact me in PM",
+            [[InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ",
+                url=f"t.me/HanaChatRobot?start=help_")]])
+        await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
                             reply_markup=buttons)
         
-    else:    
-        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active Kuki Chatbot In Group\n/removechat - Disable Kuki Chatbot In Group")
+    else: 
+        await message.reply_photo("https://te.legra.ph/file/cf6db920f0fe84daae6a3.jpg , https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg")   
+        await message.reply_text("/start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n/chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n/chatbot - ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n/offchatbot - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
 
 
 
