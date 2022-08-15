@@ -195,7 +195,7 @@ async def start(client, message):
             InlineKeyboardButton("💠 ʏᴏᴜᴛᴜʙᴇ 💠", url="https://youtube.com/channel/UCtI7hbY-BD7wvuIzoSU0cEw")
         ]]
         Photo = "https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg"
-        await message.reply_photo(Photo, caption=f"*ʜᴇʟʟᴏ  [{message.from_user.first_name}](tg://user?id={message.from_user.id})*
+        await message.reply_photo(Photo, caption=f"ʜᴇʟʟᴏ  [{message.from_user.first_name}](tg://user?id={message.from_user.id})
 *ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀʀᴛɪғɪᴄᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ᴄʜᴀᴛ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ᴛᴀʟᴋ ᴀʙᴏᴜᴛ ᴀɴʏ ᴛᴏᴘɪᴄ ɪɴ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ ɪғ ʏᴏᴜ ᴀʀᴇ ғᴇᴇʟɪɴɢ ʟᴏɴᴇʟʏ, ʏᴏᴜ ᴄᴀɴ ᴀʟᴡᴀʏs ᴄᴏᴍᴇ ᴛᴏ ᴍᴇ ᴀɴᴅ ᴄʜᴀᴛ ᴡɪᴛʜ ᴍᴇ
@@ -216,7 +216,7 @@ async def help(client, message):
         
     else: 
         await message.reply_photo("https://te.legra.ph/file/cf6db920f0fe84daae6a3.jpg , https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg")   
-        await message.reply_text("/start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n/chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n/chatbot - ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n/offchatbot - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
+        await message.reply_text("➛ /start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n➛ /chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n➛ /chatbot - ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n➛ /offchatbot - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
 
 
 
