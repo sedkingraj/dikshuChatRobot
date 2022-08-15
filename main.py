@@ -15,7 +15,7 @@ MONGO_URL = os.environ.get("MONGO_URL", None)
 
 
 bot = Client(
-    "KukiBot" ,
+    "HanaChatRobot" ,
     api_id = API_ID,
     api_hash = API_HASH ,
     bot_token = BOT_TOKEN
@@ -31,12 +31,12 @@ async def is_admins(chat_id: int):
 
 
 @bot.on_message(
-    filters.command("setupchat", prefixes=["/", ".", "?", "-"])
+    filters.command("chatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def addchat(_, message): 
-    kukidb = MongoClient(MONGO_URL)
+    hanadb = MongoClient(MONGO_URL)
     
-    kuki = kukidb["KukiDb"]["Kuki"] 
+    hana = hanadb["HanaDb"]["Hana"] 
     if message.from_user:
         user = message.from_user.id
         chat_id = message.chat.id
@@ -44,23 +44,23 @@ async def addchat(_, message):
             await is_admins(chat_id)
         ):
             return await message.reply_text(
-                "You are not admin"
+                "» ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ. | ᴄʜʟᴀ ᴊᴀ ʙsᴅᴋ ʙɴᴀ ᴅᴜ ᴏᴡɴᴇʀ 😂"
             )
-    is_kuki = kuki.find_one({"chat_id": message.chat.id})
-    if not is_kuki:
-        kuki.insert_one({"chat_id": message.chat.id})
+    is_hana = hana.find_one({"chat_id": message.chat.id})
+    if not is_hana:
+        hana.insert_one({"chat_id": message.chat.id})
         await message.reply_text(f"✅ | Successfully\nKuki Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
     else:
         await message.reply_text(f"Already Setup Kuki Chatbot of this Group Is @{message.chat.username}")
 
 
 @bot.on_message(
-    filters.command("removechat", prefixes=["/", ".", "?", "-"])
+    filters.command("offchatbot", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def rmchat(_, message): 
-    kukidb = MongoClient(MONGO_URL)
+    hanadb = MongoClient(MONGO_URL)
     
-    kuki = kukidb["KukiDb"]["Kuki"] 
+    hana = hanadb["HanaDb"]["Hana"] 
     if message.from_user:
         user = message.from_user.id
         chat_id = message.chat.id
@@ -68,13 +68,13 @@ async def rmchat(_, message):
             await is_admins(chat_id)
         ):
             return await message.reply_text(
-                "You are not admin"
+                "» ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ. | ᴄʜʟᴀ ᴊᴀ ʙsᴅᴋ ʙɴᴀ ᴅᴜ ᴏᴡɴᴇʀ 😂"
             )
-    is_kuki = kuki.find_one({"chat_id": message.chat.id})
-    if not is_kuki:
+    is_hana = hana.find_one({"chat_id": message.chat.id})
+    if not is_hana:
         await message.reply_text("Already Kuki ChatBot Disable")
     else:
-        kuki.delete_one({"chat_id": message.chat.id})
+        hana.delete_one({"chat_id": message.chat.id})
         await message.reply_text("✅ | Kuki Chatbot is disable!")
 
 
@@ -89,14 +89,14 @@ async def rmchat(_, message):
     & ~filters.edited,
     group=2,
 )
-async def kukiai(client: Client, message: Message):
+async def hanaai(client: Client, message: Message):
 
-   kukidb = MongoClient(MONGO_URL)
+   hanadb = MongoClient(MONGO_URL)
     
-   kuki = kukidb["KukiDb"]["Kuki"] 
+   hana = hanadb["HanaDb"]["Hana"] 
 
-   is_kuki = kuki.find_one({"chat_id": message.chat.id})
-   if is_kuki:
+   is_hana = hana.find_one({"chat_id": message.chat.id})
+   if is_hana:
        if message.reply_to_message:      
            botget = await bot.get_me()
            botid = botget.id
@@ -128,7 +128,7 @@ async def kukiai(client: Client, message: Message):
     & ~filters.edited,
     group=2,
 )
-async def kukiai(client: Client, message: Message):
+async def hanaai(client: Client, message: Message):
     await bot.send_chat_action(message.chat.id, "typing")
     if not message.text:
         msg = "/"
@@ -149,7 +149,7 @@ async def kukiai(client: Client, message: Message):
 
 @bot.on_message(
     filters.command("chat", prefixes=["/", ".", "?", "-"]))
-async def kukiai(client: Client, message: Message):
+async def hanaai(client: Client, message: Message):
     await bot.send_chat_action(message.chat.id, "typing")
     if not message.text:
         msg = "/"
