@@ -49,7 +49,7 @@ async def addchat(_, message):
     is_hana = hana.find_one({"chat_id": message.chat.id})
     if not is_hana:
         hana.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"✅ | sᴜᴄᴄᴇssғᴜʟʟʏ\nʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴏɴ ᴏғ ᴛʜɪs ɢʀᴏᴜᴘ ɪs sᴇᴛ ᴛᴏ @{message.chat.username}\n ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n ᴛᴇᴄʜ ǫᴜᴀʀᴅ")
+        await message.reply_text(f"✅ | sᴜᴄᴄᴇssғᴜʟʟʏ\nʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴏɴ ᴏғ ᴛʜɪs ɢʀᴏᴜᴘ ɪs sᴇᴛ ᴛᴏ @{message.chat.username}\n ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ [{message.from_user.first_name}](tg://user?id={message.from_user.id})\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛᴇᴄʜ ǫᴜᴀʀᴅ")
     else:
         await message.reply_text(f"» ᴀʟʀᴇᴀᴅʏ sᴇᴛᴜᴘ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇ ᴏғ ᴛʜɪs ɢʀᴏᴜᴘ ɪs @{message.chat.username}")
 
@@ -176,8 +176,8 @@ async def start(client, message):
     busername = self.username
     if message.chat.type != "private":
         buttons = [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
-                   InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
-                  ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
+                   InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),],
+                  [InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]]
         await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
                             reply_markup=buttons)
         
