@@ -195,11 +195,11 @@ async def start(client, message):
             InlineKeyboardButton("💠 ʏᴏᴜᴛᴜʙᴇ 💠", url="https://youtube.com/channel/UCtI7hbY-BD7wvuIzoSU0cEw")
         ]]
         Photo = "https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg"
-        await message.reply_photo(Photo, caption=f"ʜᴇʟʟᴏ [{message.from_user.first_name}](tg://user?id={message.from_user.id}),
+        await message.reply_photo(Photo, caption=f"""ʜᴇʟʟᴏ [{message.from_user.first_name}](tg://user?id={message.from_user.id}),
 *ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀʀᴛɪғɪᴄᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ᴄʜᴀᴛ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ᴛᴀʟᴋ ᴀʙᴏᴜᴛ ᴀɴʏ ᴛᴏᴘɪᴄ ɪɴ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ ɪғ ʏᴏᴜ ᴀʀᴇ ғᴇᴇʟɪɴɢ ʟᴏɴᴇʟʏ, ʏᴏᴜ ᴄᴀɴ ᴀʟᴡᴀʏs ᴄᴏᴍᴇ ᴛᴏ ᴍᴇ ᴀɴᴅ ᴄʜᴀᴛ ᴡɪᴛʜ ᴍᴇ
-➛ ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ᴄᴍᴅs. ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××", reply_markup=InlineKeyboardMarkup(buttons))
+➛ ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ᴄᴍᴅs. ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××""", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
