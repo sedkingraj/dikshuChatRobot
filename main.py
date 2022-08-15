@@ -9,7 +9,7 @@ import re
 API_ID = os.environ.get("API_ID", None) 
 API_HASH = os.environ.get("API_HASH", None) 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None) 
-KUKI_API = os.environ.get("HANA_API", None) 
+HANA_API = os.environ.get("HANA_API", None) 
 ERROR_LOG = os.environ.get("ERROR_LOG", None) 
 MONGO_URL = os.environ.get("MONGO_URL", None)
 
@@ -68,7 +68,7 @@ async def rmchat(_, message):
             await is_admins(chat_id)
         ):
             return await message.reply_text(
-                "» ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ. | ᴄʜʟᴀ ᴊᴀ ʙsᴅᴋ ʙɴᴀ ᴅᴜ ᴏᴡɴᴇʀ 😂"
+                "» ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ. | ᴄʜʟᴀ ᴊᴀ ʙsᴅᴋ ʙɴᴀ ᴅᴜ ᴀᴅᴍɪɴ 😂"
             )
     is_hana = hana.find_one({"chat_id": message.chat.id})
     if not is_hana:
@@ -175,8 +175,7 @@ async def start(client, message):
     self = await bot.get_me()
     busername = self.username
     if message.chat.type != "private":
-        buttons = InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
+        buttons = [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
                   ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
         await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
@@ -196,7 +195,7 @@ async def start(client, message):
         ]]
         Photo = "https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg"
         await message.reply_photo(Photo, caption=f"""ʜᴇʟʟᴏ [{message.from_user.first_name}](tg://user?id={message.from_user.id}),
-*ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀʀᴛɪғɪᴄᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ᴄʜᴀᴛ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ᴛᴀʟᴋ ᴀʙᴏᴜᴛ ᴀɴʏ ᴛᴏᴘɪᴄ ɪɴ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ.*
+ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀʀᴛɪғɪᴄᴀʟ ɪɴᴛᴇʟʟɪɢᴇɴᴄᴇ ᴄʜᴀᴛ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ᴛᴀʟᴋ ᴀʙᴏᴜᴛ ᴀɴʏ ᴛᴏᴘɪᴄ ɪɴ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➛ ɪғ ʏᴏᴜ ᴀʀᴇ ғᴇᴇʟɪɴɢ ʟᴏɴᴇʟʏ, ʏᴏᴜ ᴄᴀɴ ᴀʟᴡᴀʏs ᴄᴏᴍᴇ ᴛᴏ ᴍᴇ ᴀɴᴅ ᴄʜᴀᴛ ᴡɪᴛʜ ᴍᴇ
 ➛ ᴛʀʏ ᴛʜᴇ ʜᴇʟᴘ ᴄᴍᴅs. ᴛᴏ ᴋɴᴏᴡ ᴍʏ ᴀʙɪʟɪᴛɪᴇs ××""", reply_markup=InlineKeyboardMarkup(buttons))
@@ -215,7 +214,6 @@ async def help(client, message):
                             reply_markup=buttons)
         
     else: 
-        await message.reply_photo("https://te.legra.ph/file/cf6db920f0fe84daae6a3.jpg , https://te.legra.ph/file/b9eab8788d5c8bcb85f9f.jpg")   
         await message.reply_text("➛ /start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n➛ /chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n➛ /chatbot - ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n➛ /offchatbot - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
 
 
