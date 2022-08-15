@@ -175,9 +175,10 @@ async def start(client, message):
     self = await bot.get_me()
     busername = self.username
     if message.chat.type != "private":
-        buttons =  [[InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
-                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
-                   ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
+        buttons = InlineKeyboardMarkup(
+                  [InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/TechQuard"),
+                   InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/TechQuardSupport"),
+                  ][InlineKeyboardButton(text="ᴄʟɪᴄᴋ ʜᴇʀᴇ", url=f"t.me/HanachatRobot?start")]])
         await message.reply("ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ ᴘᴇʀsᴏɴᴀʟ",
                             reply_markup=buttons)
         
