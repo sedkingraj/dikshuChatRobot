@@ -31,7 +31,7 @@ async def is_admins(chat_id: int):
 
 
 @bot.on_message(
-    filters.command("chatbot", prefixes=["/", ".", "?", "-"])
+    filters.command("chatbot on", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def addchat(_, message): 
     hanadb = MongoClient(MONGO_URL)
@@ -55,7 +55,7 @@ async def addchat(_, message):
 
 
 @bot.on_message(
-    filters.command("offchatbot", prefixes=["/", ".", "?", "-"])
+    filters.command("chatbot off", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def rmchat(_, message): 
     hanadb = MongoClient(MONGO_URL)
@@ -214,7 +214,7 @@ async def help(client, message):
                             reply_markup=buttons)
         
     else: 
-        await message.reply_text("➛ /start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n➛ /chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n➛ /chatbot - ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n➛ /offchatbot - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
+        await message.reply_text("➛ /start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ\n➛ /chat - sᴇɴᴅ ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜɪs ʙᴏᴛ\n➛ /chatbot on- ᴀᴄᴛɪᴠᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ\n➛ /chatbot off - ᴅɪsᴀʙʟᴇ ʜᴀɴᴀ ᴄʜᴀᴛʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
 
 
 
