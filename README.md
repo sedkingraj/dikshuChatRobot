@@ -1,6 +1,6 @@
 # ʜᴀɴᴀ ᴄʜᴀᴛ ʀᴏʙᴏᴛ
 
-<p align="center"><a href="https://t.me/TechQuardSupport"><img src="https://telegra.ph/file/6aa50bceef345248656d9.jpg"></a></p>
+<p align="center"><a href="https://t.me/TechQuardSupport"><img src="https://telegra.ph/file/ead43f0d45168434474e6.jpg"></a></p>
 
 
 ## ᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 
